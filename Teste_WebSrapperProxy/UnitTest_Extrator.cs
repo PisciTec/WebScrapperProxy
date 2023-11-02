@@ -2,7 +2,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using WebScrapperProxy.Process;
 
-namespace WebScrapperProxy.Testes
+namespace Teste_WebSrapperProxy.Testes
 {
     public class Teste_Extrator
     {
@@ -12,7 +12,7 @@ namespace WebScrapperProxy.Testes
         {
             Extrator extrator = new Extrator();
 
-
+            extrator.ExtratorHtml();
            
         }
     }
