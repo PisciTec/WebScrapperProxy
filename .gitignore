@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/pagina_html
+/json_extraidos
+/paginasConcatenadas-231103080351.json
+/paginasConcatenadas-231103080847.json
+/ExtratorProxy.db
+*.db-shm
+*.db-wal
