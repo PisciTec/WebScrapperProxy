@@ -10,7 +10,7 @@ using WebScrapperProxy.Database;
 namespace WebScrapperProxy.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20231102161017_InitialCreate")]
+    [Migration("20231103105437_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

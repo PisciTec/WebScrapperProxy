@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebScrapperProxy.Database;
+
 #nullable disable
 
 namespace WebScrapperProxy.Migrations

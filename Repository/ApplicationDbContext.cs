@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using WebScrapperProxy.Models;
-
+using Microsoft.EntityFrameworkCore.Sqlite;
 namespace WebScrapperProxy.Database;
 
 public class ApplicationContext : DbContext

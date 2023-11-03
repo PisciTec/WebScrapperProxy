@@ -2,4 +2,4 @@
 
 ### Ao iniciar rodar
 
-> dotnet ef migrations update
+> dotnet ef database update

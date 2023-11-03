@@ -1,21 +1,17 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebScrapperProxy.Models;
 
 namespace WebScrapperProxy.Process
 {
     public class Extrator
     {
-        internal int PaginaFinal = 0;
 
-        public int ScrappyProxyPorPagina(int paginaAtual, int paginaFinal)
+        public static void ScrappyProxyPorPagina(int paginaAtual)
         {
+            Console.WriteLine($"Thread {paginaAtual} iniciou... Hora: {DateTime.Now.ToShortTimeString()}");
+
             IWebDriver driver = new ChromeDriver("C:/SeleniumDrivers");
             var timeout = 3000; // in milliseconds
             var wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(timeout));
@@ -31,11 +27,11 @@ namespace WebScrapperProxy.Process
 
             Helper.SalvarParaJsonProxies(proxyExtraidoJson, proxyExtracteds);
 
-            Console.WriteLine($"Página {paginaAtual} de {paginaFinal} extraída: \n Finalizada em: {DateTime.Now.ToShortTimeString()}");
-            return proxyExtracteds.Count;
+            Console.WriteLine($"Processada página {paginaAtual} Hora Fim: {DateTime.Now.ToShortTimeString()}");
+            Thread.Sleep(500);
         }
 
-        internal List<ProxyExtracted> ExtratorHtml(ref IWebDriver driver)
+        internal static List<ProxyExtracted> ExtratorHtml(ref IWebDriver driver)
         {
             List<ProxyExtracted> proxies = new List<ProxyExtracted>();
             List<IWebElement> linhasProxy = driver.FindElements(By.CssSelector("tr[valign=\"top\"]")).ToList();
@@ -52,6 +48,7 @@ namespace WebScrapperProxy.Process
                 proxies.Add(proxy);
             }
             driver.Close();
+            driver.Quit();
             return proxies;
         }
     }
